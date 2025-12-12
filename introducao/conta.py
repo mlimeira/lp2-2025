@@ -1,30 +1,39 @@
 class Conta:
     #Método de inicialização dos objetos do tipo Conta
     #Características de identificação da conta
+    #Classe Conta encapsulada
     def __init__(self, numero:int, titular, saldo, limite):
-        self.numero = numero
-        self.titular = titular
-        self.saldo = saldo
-        self.limite = limite
+        self._numero = numero
+        self._titular = titular
+        self._saldo = saldo
+        self._limite = limite
+
+    #Métodos de controle de acesso
+    def get_titular(self):
+        return self._titular
+
+    def set_titular(self, nome):
+        self._titular = nome
+
     #Características comportamentais (o que podemos executar)
     def sacar(self, valor):
-        if valor > self.saldo + self.limite:
+        if valor > self._saldo + self._limite:
             return False
         else:
-            self.saldo -= valor
+            self._saldo -= valor
             return True
 
     def depositar(self, valor):
-        self.saldo += valor
+        self._saldo += valor
 
     def ver_saldo(self):
-        if self.saldo < 0:
-            print(f'Conta número: {self.numero} saldo negativo: {self.saldo}, '
+        if self._saldo < 0:
+            print(f'Conta número: {self._numero} saldo negativo: {self._saldo}, '
                   f'usando limite de'
-                  f' {self.limite} ainda pode utilizar'
-                  f' {self.limite + self.saldo}')
+                  f' {self._limite} ainda pode utilizar'
+                  f' {self._limite + self._saldo}')
         else:
-            print(f'Conta número: {self.numero}, saldo: {self.saldo}')
+            print(f'Conta número: {self._numero}, saldo: {self._saldo}')
 
     #Tranferir
     def transferir(self, conta_destino, valor):
@@ -35,4 +44,4 @@ class Conta:
             return False
 
     def __str__(self):
-        return f'Conta número: {self.numero}, Titular: {self.titular}'
+        return f'Conta número: {self._numero}, Titular: {self._titular}'

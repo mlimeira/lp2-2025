@@ -11,7 +11,10 @@ print(id(conta3))
 # conta1.titular = 'Limeira'
 # conta1.saldo = 150.5
 # conta1.numero = 1
-print(conta1.titular)
+#Acessar diretamente o atributo é incorreto
+#print(conta1._Conta__titular)
+conta1.set_titular('Limeira Júinor')
+print(conta1.get_titular())
 #print(conta1.saldo)
 # conta2.titular = 'Kaua'
 # conta2.saldo = 5678
