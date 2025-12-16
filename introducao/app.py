@@ -41,3 +41,7 @@ conta2.ver_saldo()
 print(conta2.__dict__)
 print(dir(Conta))
 print(conta2)
+print(conta2.get_titular())
+conta2.limite = 2000
+print(conta2.limite)
+conta2.sacar(10000)
