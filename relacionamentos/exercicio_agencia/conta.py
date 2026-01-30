@@ -17,7 +17,9 @@ class Conta:
         self._limite = limite
         self._clientes = []
         self._historico = Historico() #É uma referência da classe Historico
-        
+        self._ativa = True
+    
+                
     def get_listar_clientes(self):
         print(f'Clientes da conta {self}:')
         print('-----------------------------------')
