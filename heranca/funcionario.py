@@ -5,4 +5,7 @@ class Funcionario:
         self._salario = salario
     
     def redefinir_salario(self):
-        self._salario += 200 
+        self._salario += 1000 
+
+    def get_bonificacao(self):
+        return self._salario * 0.1

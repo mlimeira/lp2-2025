@@ -6,3 +6,6 @@ class Gerente(Funcionario):
         self._senha = senha
         self._qtde = qtde
 
+    def get_bonificacao(self):
+        return super().get_bonificacao() + 5000#self._salario * 0.2
+
