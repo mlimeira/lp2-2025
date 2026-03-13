@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Funcionario{
+    - salario: float
+    + {abstract}get_bonificacao(): float
+}
+class Presidente{
+     + get_bonificacao(): float
+}
+class Gerente{
+    + get_bonificacao(): float
+}
+class Diretor{
+    + get_bonificacao(): float
+}
+class SecretariaExecutiva{
+    + get_bonificacao(): float
+}
+class SecretariaAdministrativa{
+    + get_bonificacao(): float
+}
+Funcionario <|-- Gerente
+Funcionario <|-- Presidente
+Gerente <|-- Diretor
+Funcionario <|-- Secretaria
+Secretaria <|-- SecretariaExecutiva
+Secretaria <|-- SecretariaAdministrativa
+
+
+
+
+@enduml
