@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Funcionario
+class Presidente
+class Diretor
+class Gerente
+class Cliente
+class Estagiario
+
+abstract class Autenticavel{
+    + {abstract}autenticar()
+}
+
+Funcionario <|-- Presidente
+Gerente <|-- Diretor
+Funcionario <|-- Gerente
+
+Autenticavel <|-- Cliente
+'Autenticavel <|-- Presidente
+Autenticavel <|-- Gerente
+
+
+@enduml
